@@ -32,7 +32,7 @@ class ArticleFormType extends AbstractType
             ->add('category', EntityType::class, [
                 'class' => Categorie::class,
                 'choice_label' => 'name',
-                'label' => 'Choisissez une catégorie'
+                'label' => 'Choisissez une catégorie',
             ])
             ->add('photo', FileType::class, [
                 'label' => 'Photo d\'illustration',
