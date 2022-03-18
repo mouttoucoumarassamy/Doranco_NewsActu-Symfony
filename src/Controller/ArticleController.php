@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Entity\Commentary;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,8 +16,11 @@ class ArticleController extends AbstractController
      */
     public function showArticle(Article $article, EntityManagerInterface $entityManager): Response
     {
+        $commentaries = $entityManager->getRepository(Commentary::class)->findBy(['article' => $article->getId()]);
+
         return $this->render('article/show_article.html.twig', [
             'article' => $article,
+            'commentaries' => $commentaries
         ]);
     }
 }
