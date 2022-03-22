@@ -35,12 +35,14 @@ class CommentaryController extends AbstractController
                 ]);
             }
 
-
             if($form->isSubmitted() && $form->isValid()) {
 
                 $commentary->setArticle($article);
                 $commentary->setCreatedAt(new Datetime);
                 $commentary->setUpdatedAt(new Datetime);
+
+                // On set l'auteur du commentaire
+                $commentary->setAuthor($this->getUser());
 
                 $entityManager->persist($commentary);
                 $entityManager->flush();
