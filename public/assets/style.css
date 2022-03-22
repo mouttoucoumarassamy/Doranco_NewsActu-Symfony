@@ -1,3 +1,6 @@
+body {
+    overflow-x: hidden ;
+}
 
 .img-card-custom {
     object-fit: cover;
@@ -9,3 +12,4 @@
     height: 600px;
     object-fit: cover;
 }
+
