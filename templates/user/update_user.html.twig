@@ -2,7 +2,7 @@
 
 {% block body %}
 
-    <h1 class="text-center mx-auto my-4">Inscription</h1>
+    <h1 class="text-center mx-auto my-4">Modifier mes informations</h1>
 
     <div class="row">
         <div class="col-6 mx-auto">
@@ -18,13 +18,11 @@
                     </div>
                 </div>
 
-                {{ form_row(form.email) }}
-
-                {{ form_row(form.password) }}
+            {{ form_row(form.email) }}
 
             {{ form_end(form) }}
 
         </div>
     </div>
-
 {% endblock %}
+
