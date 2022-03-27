@@ -1,0 +1,34 @@
+
+
+
+
+
+
+/**
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1 class="text-center">Tableau de Bord</h1>
+
+    {% for label, messages in app.flashes %}
+        {% %}
+
+    {% endfor %}
+
+{% endblock %}
+class="alert alert--{{ label }} alert-dismissible fade show" role="alert"
+
+
+
+
+<div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+    {% if label == 'success' %}
+        <span class="alert-inner--icon"><i class="fa fa-thumbs-up"></i></span>
+    {% else %}
+        <span class="alert-inner--icon"><i class="fa fa-thumbs-down"></i></span>
+    {% endif %}
+    <span class="alert-inner--text"><strong>{{ label | title }} : </strong> {{ message | raw }}</span>
+</div>
+
+
